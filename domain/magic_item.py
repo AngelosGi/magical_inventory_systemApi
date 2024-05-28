@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Optional, Dict, Any
+from typing import Optional
 
 
 class MagicItemBase(BaseModel):
@@ -11,3 +11,16 @@ class MagicItemBase(BaseModel):
     weight: Optional[float]
     durability: Optional[float]
     value: Optional[int]
+
+
+class MagicItemCreate(MagicItemBase):
+    pass
+
+
+class MagicItemRead(MagicItemBase):
+    id: int
+    rarity_value: float
+    rarity_category: str
+
+    class Config:
+        orm_mode = True
