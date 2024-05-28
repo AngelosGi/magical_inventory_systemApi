@@ -24,3 +24,12 @@ class MagicItemRead(MagicItemBase):
 
     class Config:
         orm_mode = True
+
+
+class CreateItemRequest(BaseModel):
+    name: str
+    description: str = None
+    level: int = None
+    type: str = None
+    category: str = None
+    value: int = None
