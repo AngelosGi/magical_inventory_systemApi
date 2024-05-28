@@ -4,6 +4,7 @@ CREATE TABLE items (
     description TEXT,
     level INT,
     type VARCHAR(255),
+    category VARCHAR(255),
     rarity_value FLOAT NOT NULL,
     weight FLOAT,
     value INT
