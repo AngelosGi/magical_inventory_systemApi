@@ -10,7 +10,7 @@ def apply_migrations():
         try:
             with conn.cursor() as cursor:
                 # Drop the "items" table if it exists
-                cursor.execute("DROP TABLE IF EXISTS items;")
+                cursor.execute("DROP TABLE IF EXISTS magic_items;")
                 # Create the "items" table
                 cursor.execute(sql)
             conn.commit()

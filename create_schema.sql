@@ -1,4 +1,4 @@
-CREATE TABLE items (
+CREATE TABLE magic_items (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
@@ -7,5 +7,6 @@ CREATE TABLE items (
     category VARCHAR(255),
     rarity_value FLOAT NOT NULL,
     weight FLOAT,
-    value INT
+    value INT,
+    durability FLOAT
 );
