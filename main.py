@@ -6,6 +6,7 @@ app.include_router(router, prefix="/items")
 
 
 def main():
+    print("Start")
 
 
 if __name__ == '__main__':
