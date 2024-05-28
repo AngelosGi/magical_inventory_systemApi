@@ -9,7 +9,8 @@ class MagicItemRepository:
             cursor = conn.cursor()
 
             cursor.execute("""
-                INSERT INTO magic_items (name, description, level, type, category, rarity_value, weight, value, durability)
+                INSERT INTO magic_items
+                (name, description, level, type, category, rarity_value, weight, value, durability)
                 VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id
             """, (
                 item_data['name'], item_data.get('description'), item_data.get('level'), item_data.get('type'),
