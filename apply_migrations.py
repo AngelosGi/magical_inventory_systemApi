@@ -9,9 +9,9 @@ def apply_migrations():
         conn = get_connection()
         try:
             with conn.cursor() as cursor:
-                # Drop the "items" table if it exists
+                # Drop the "magic_items" table if it exists
                 cursor.execute("DROP TABLE IF EXISTS magic_items;")
-                # Create the "items" table
+                # Create the "magic_items" table
                 cursor.execute(sql)
             conn.commit()
             print('Migrations successful!')
