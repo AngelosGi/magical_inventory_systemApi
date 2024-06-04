@@ -81,6 +81,16 @@ class MagicItemRepository:
 
     @staticmethod
     def update_item(item_id: int, update_data: dict) -> Optional[Dict[Any, Any]]:
+        """
+        Update an item in the database with the given item ID and update data.
+        Args:
+            item_id (int): The ID of the item to update.
+            update_data (dict): A dictionary containing the updated data for the item.
+        Returns:
+            Optional[Dict[Any, Any]]: The updated item data if the update was successful, None otherwise.
+        Raises:
+            Exception: If an error occurs during the update process.
+        """
         try:
             set_clause = ", ".join([f"{key} = %s" for key in update_data.keys()])
             values = list(update_data.values())
@@ -102,5 +112,31 @@ class MagicItemRepository:
                                 'value', 'durability', 'stock']
                 updated_item = dict(zip(column_names, updated_item))
             return updated_item
+        except Exception as e:
+            raise e
+
+    @staticmethod
+    def delete_item(item_id: int) -> Optional[dict]:
+        """
+        Delete an item from the database by its ID.
+        Args:
+            item_id (int): The ID of the item to delete.
+        Returns:
+            Optional[dict]: The deleted item data if deletion was successful, None otherwise.
+        Raises:
+            Exception: If an error occurs during the deletion process.
+        """
+        try:
+            with get_connection() as conn:
+                with conn.cursor() as cursor:
+                    cursor.execute("DELETE FROM magic_items WHERE id = %s RETURNING *", (item_id,))
+                    deleted_item = cursor.fetchone()
+                    conn.commit()
+
+            if deleted_item:
+                column_names = ['id', 'name', 'description', 'level', 'type', 'category', 'rarity_value', 'weight',
+                                'value', 'durability', 'stock']
+                deleted_item = dict(zip(column_names, deleted_item))
+            return deleted_item
         except Exception as e:
             raise e

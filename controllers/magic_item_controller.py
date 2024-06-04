@@ -72,3 +72,18 @@ async def update_item(item_id: int, update_data: MagicItemUpdate):
             raise HTTPException(status_code=404, detail="Item not found")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error updating item: {str(e)}")
+
+
+@router.delete("/delete/{item_id}")
+async def delete_item(item_id: int):
+    """
+    Delete a magic item by its ID.
+    """
+    try:
+        deleted_item = MagicItemService.delete_item(item_id)
+        if deleted_item:
+            return {"message": "Item deleted successfully"}
+        else:
+            raise HTTPException(status_code=404, detail="Item not found")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error deleting item: {str(e)}")

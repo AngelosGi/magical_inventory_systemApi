@@ -1,5 +1,5 @@
 from typing import List, Dict, Any, Optional
-
+from fastapi import HTTPException
 from repositories.magic_item_repository import MagicItemRepository
 import random
 
@@ -74,9 +74,23 @@ class MagicItemService:
         except Exception as e:
             raise Exception("Error retrieving item by ID: " + str(e))
 
-# create a trash method (reducing stock by INT)
-# create a sell method to "sell items"  (reduce stock by INT and adding the value to a "wallet")
-# create something to convert rarity to text, Common/Rare etc.
-# create something like use_item or test_item
-# with each use/test reduce durability in items or reduce stock in consumables (potions)
-# in items, if the durability reaches <0 then reduce stock by 1
+    @staticmethod
+    def delete_item(item_id: int) -> Optional[dict]:
+        """
+        Delete an item from the database by its ID.
+        Args:
+            item_id (int): The ID of the item to delete.
+        Returns:
+            Optional[dict]: The deleted item data if deletion was successful, None otherwise.
+        Raises:
+            Exception: If an error occurs during the deletion process.
+        """
+        try:
+            return MagicItemRepository.delete_item(item_id)
+        except Exception as e:
+            raise Exception("Error deleting item: " + str(e))
+
+# create a delete method (reducing stock by INT) create a sell method to "sell items"  (reduce stock by INT and
+# adding the value to a "wallet") create something to convert rarity to text, Common/Rare etc. create something like
+# use_item or test_item with each use/test reduce durability in items or reduce stock in consumables (potions) in
+# items, if the durability reaches <0 then reduce stock by 1
