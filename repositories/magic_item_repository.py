@@ -12,12 +12,12 @@ class MagicItemRepository:
 
             cursor.execute("""
                 INSERT INTO magic_items
-                (name, description, level, type, category, rarity_value, weight, value, durability)
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id
+                (name, description, level, type, category, rarity_value, weight, value, durability, stock)
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id
             """, (
                 item_data['name'], item_data.get('description'), item_data.get('level'), item_data.get('type'),
                 item_data.get('category'), item_data['rarity_value'], item_data['weight'], item_data.get('value'),
-                item_data['durability']
+                item_data['durability'], item_data.get('stock', 1)
             ))
 
             item_id = cursor.fetchone()[0]
@@ -45,7 +45,7 @@ class MagicItemRepository:
 
             # Assuming your table has columns in this specific order
             column_names = ['id', 'name', 'description', 'level', 'type', 'category', 'rarity_value', 'weight', 'value',
-                            'durability']
+                            'durability', 'stock']
             all_items = [dict(zip(column_names, item)) for item in items]
 
             return all_items
