@@ -11,6 +11,7 @@ class MagicItemBase(BaseModel):
     weight: Optional[float]
     durability: Optional[float]
     value: Optional[int]
+    stock: Optional[int]
 
 
 class MagicItemCreate(MagicItemBase):
@@ -33,3 +34,4 @@ class CreateItemRequest(BaseModel):
     type: str = None
     category: str = None
     value: int = None
+    stock: int = 1
