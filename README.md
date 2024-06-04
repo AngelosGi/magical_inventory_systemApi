@@ -74,8 +74,20 @@ When creating a new magic item, the system automatically generates random values
 
 
 ```create
-#/items/create input
+/items/create  JSON
 
+{
+  "name": "string",
+  "description": "string",
+  "level": 0,
+  "type": "string",
+  "category": "string",
+  "value": 0,
+  "stock": 1
+}
+```
+```created item
+# Example
 {
   "name": "Staff of Eternal Wisdom",
   "description": "A staff imbued with the wisdom of the ancients.",
@@ -85,10 +97,8 @@ When creating a new magic item, the system automatically generates random values
   "value": 1312,
   "stock": 1
 }
-```
-```created item
-#created item with some random values.
 
+# Newly created item with the random values.
 {
   "name": "Staff of Eternal Wisdom",
   "description": "A staff imbued with the wisdom of the ancients.",
