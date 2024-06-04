@@ -20,7 +20,7 @@ class MagicItemCreate(MagicItemBase):
 class MagicItemRead(MagicItemBase):
     id: int
     rarity_value: float
-    rarity_category: str
+    # rarity_category: str
 
     class Config:
         orm_mode = True
