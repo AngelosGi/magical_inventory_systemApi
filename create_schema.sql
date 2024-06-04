@@ -9,4 +9,6 @@ CREATE TABLE magic_items (
     weight FLOAT,
     value INT,
     durability FLOAT
+    stock INT
+
 );
