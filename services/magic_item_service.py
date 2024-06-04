@@ -23,7 +23,23 @@ class MagicItemService:
             item_data['rarity_value'] = random.uniform(0.0, 100.0)
             return MagicItemRepository.create_item(item_data)
         except Exception as e:
-            raise e
+            raise Exception("Error generating random values: " + str(e))
+
+    @staticmethod
+    def update_item(item_id: int, update_data: dict) -> Optional[dict]:
+        """
+        Update an item in the database with the given item ID and update data.
+        Args:
+            item_id (int): The ID of the item to update.
+            update_data (dict): A dictionary containing the updated data for the item.
+        Returns:
+            Optional[dict]: The updated item data if the update was successful, None otherwise.
+        """
+        try:
+            update_data = {key: value for key, value in update_data.items() if value is not None}
+            return MagicItemRepository.update_item(item_id, update_data)
+        except Exception as e:
+            raise Exception("Error updating item: " + str(e))
 
     @staticmethod
     def get_all_items() -> list[dict[Any, Any]]:
@@ -37,7 +53,7 @@ class MagicItemService:
         try:
             return MagicItemRepository.get_all_items()
         except Exception as e:
-            raise e
+            raise Exception("Error retrieving all items: " + str(e))
 
     @classmethod
     def get_item_by_id(cls, item_id: int) -> Optional[dict[Any, Any]]:
@@ -56,8 +72,10 @@ class MagicItemService:
                 item['id'] = item_id
             return item
         except Exception as e:
-            raise e
+            raise Exception("Error retrieving item by ID: " + str(e))
 
+# create a trash method (reducing stock by INT)
+# create a sell method to "sell items"  (reduce stock by INT and adding the value to a "wallet")
 # create something to convert rarity to text, Common/Rare etc.
 # create something like use_item or test_item
 # with each use/test reduce durability in items or reduce stock in consumables (potions)
