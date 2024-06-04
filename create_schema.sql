@@ -8,7 +8,7 @@ CREATE TABLE magic_items (
     rarity_value FLOAT NOT NULL,
     weight FLOAT,
     value INT,
-    durability FLOAT
-    stock INT
+    durability FLOAT,
+    stock INT DEFAULT 1
 
 );
