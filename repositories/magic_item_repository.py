@@ -78,3 +78,29 @@ class MagicItemRepository:
             return item
         except Exception as e:
             raise e
+
+    @staticmethod
+    def update_item(item_id: int, update_data: dict) -> Optional[Dict[Any, Any]]:
+        try:
+            set_clause = ", ".join([f"{key} = %s" for key in update_data.keys()])
+            values = list(update_data.values())
+            values.append(item_id)
+
+            with get_connection() as conn:
+                with conn.cursor() as cursor:
+                    cursor.execute(f"""
+                        UPDATE magic_items
+                        SET {set_clause}
+                        WHERE id = %s
+                        RETURNING *
+                    """, values)
+                    updated_item = cursor.fetchone()
+                    conn.commit()
+
+            if updated_item:
+                column_names = ['id', 'name', 'description', 'level', 'type', 'category', 'rarity_value', 'weight',
+                                'value', 'durability', 'stock']
+                updated_item = dict(zip(column_names, updated_item))
+            return updated_item
+        except Exception as e:
+            raise e
