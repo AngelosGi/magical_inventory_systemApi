@@ -1,9 +1,9 @@
 from typing import List, Dict, Any
-
 from db import get_connection
 
 
 class MagicItemRepository:
+
     @staticmethod
     def create_item(item_data: dict) -> dict:
         try:

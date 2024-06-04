@@ -28,6 +28,6 @@ async def create_item(item_data: CreateItemRequest):
     # Convert Pydantic model to dictionary
     item_data_dict = item_data.dict()
 
-    # Call the service to generate random values
+    # Call the service to "check item" generate random values
     created_item = MagicItemService.generate_random_values(item_data_dict)
     return created_item
