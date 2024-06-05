@@ -58,6 +58,36 @@ async def create_item(item_data: CreateItemRequest):
         raise HTTPException(status_code=500, detail=f"Error creating item: {str(e)}")
 
 
+@router.post("/{item_id}/increase_stock")
+async def increase_stock(item_id: int, quantity: int):
+    """
+    Increase the stock of a specific item (id).
+    """
+    try:
+        updated_item = MagicItemService.increase_stock(item_id, quantity)
+        if updated_item:
+            return updated_item
+        else:
+            raise HTTPException(status_code=404, detail="Item not found")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Error increasing stock: {str(e)}")
+
+
+@router.post("/{item_id}/decrease_stock")
+async def decrease_stock(item_id: int, quantity: int):
+    """
+    decrease the stock of a specific item (id).
+    """
+    try:
+        updated_item = MagicItemService.decrease_stock(item_id, quantity)
+        if updated_item:
+            return updated_item
+        else:
+            raise HTTPException(status_code=404, detail="Item not found")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Error decreasing stock: {str(e)}")
+
+
 @router.put("/update_item/{item_id}")
 async def update_item(item_id: int, update_data: MagicItemUpdate):
     """
