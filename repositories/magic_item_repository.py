@@ -116,6 +116,38 @@ class MagicItemRepository:
             raise e
 
     @staticmethod
+    def update_stock(item_id: int, quantity: int, operation: str) -> Optional[Dict[Any, Any]]:
+        """
+        Update the stock of an item in the database.
+        """
+        try:
+            with get_connection() as conn:
+                with conn.cursor() as cursor:
+                    if operation == 'increase':
+                        cursor.execute("""
+                            UPDATE magic_items
+                            SET stock = stock + %s
+                            WHERE id = %s
+                            RETURNING *
+                        """, (quantity, item_id))
+                    elif operation == 'decrease':
+                        cursor.execute("""
+                            UPDATE magic_items
+                            SET stock = stock - %s
+                            WHERE id = %s
+                            RETURNING *
+                        """, (quantity, item_id))
+                    updated_item = cursor.fetchone()
+                    conn.commit()
+            if updated_item:
+                column_names = ['id', 'name', 'description', 'level', 'type', 'category', 'rarity_value', 'weight',
+                                'value', 'durability', 'stock']
+                updated_item = dict(zip(column_names, updated_item))
+            return updated_item
+        except Exception as e:
+            raise e
+
+    @staticmethod
     def delete_item(item_id: int) -> Optional[dict]:
         """
         Delete an item from the database by its ID.
