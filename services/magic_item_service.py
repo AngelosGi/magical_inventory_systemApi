@@ -95,6 +95,35 @@ class MagicItemService:
             raise Exception("Error decreasing stock: " + str(e))
 
     @staticmethod
+    def get_inventory_statistics() -> Dict[str, Any]:
+        """
+        Get inventory statistics.
+        """
+        try:
+            all_items = MagicItemRepository.get_all_items()
+            total_items = len(all_items)
+            total_stock = sum(item['stock'] for item in all_items)
+            total_value = sum(item['value'] * item['stock'] for item in all_items if item['value'] is not None)
+
+            most_expensive_item = max(all_items, key=lambda x: x['value'], default=None)
+            cheapest_item = min(all_items, key=lambda x: x['value'], default=None)
+            most_stocked_item = max(all_items, key=lambda x: x['stock'], default=None)
+            highest_level_item = max(all_items, key=lambda x: x['level'], default=None)
+
+            statistics = {
+                "total_items": total_items,
+                "total_stock": total_stock,
+                "total_value": total_value,
+                "most_expensive_item": most_expensive_item,
+                "cheapest_item": cheapest_item,
+                "most_stocked_item": most_stocked_item,
+                "highest_level_item": highest_level_item,
+            }
+            return statistics
+        except Exception as e:
+            raise Exception("Error calculating inventory statistics: " + str(e))
+
+    @staticmethod
     def delete_item(item_id: int) -> Optional[dict]:
         """
         Delete an item from the database by its ID.
