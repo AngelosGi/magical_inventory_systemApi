@@ -75,6 +75,26 @@ class MagicItemService:
             raise Exception("Error retrieving item by ID: " + str(e))
 
     @staticmethod
+    def increase_stock(item_id: int, quantity: int) -> dict:
+        """
+        Increase the stock of a specific item.
+        """
+        try:
+            return MagicItemRepository.update_stock(item_id, quantity, operation='increase')
+        except Exception as e:
+            raise Exception("Error increasing stock: " + str(e))
+
+    @staticmethod
+    def decrease_stock(item_id: int, quantity: int) -> dict:
+        """
+        Decrease the stock of a specific item.
+        """
+        try:
+            return MagicItemRepository.update_stock(item_id, quantity, operation='decrease')
+        except Exception as e:
+            raise Exception("Error decreasing stock: " + str(e))
+
+    @staticmethod
     def delete_item(item_id: int) -> Optional[dict]:
         """
         Delete an item from the database by its ID.
@@ -90,7 +110,8 @@ class MagicItemService:
         except Exception as e:
             raise Exception("Error deleting item: " + str(e))
 
-# create a delete method (reducing stock by INT) create a sell method to "sell items"  (reduce stock by INT and
-# adding the value to a "wallet") create something to convert rarity to text, Common/Rare etc. create something like
-# use_item or test_item with each use/test reduce durability in items or reduce stock in consumables (potions) in
-# items, if the durability reaches <0 then reduce stock by 1
+# create a sell method to "sell items"  (reduce stock by INT and add the value of items sold to a "wallet")
+# create a buy option,
+# create something to convert rarity to text, Common/Rare etc.
+# create something like "use_item" or "test_item" with each use/test reduce durability in items or reduce stock in
+# consumables (potions) in items, if the durability reaches <0 then reduce stock by 1.
