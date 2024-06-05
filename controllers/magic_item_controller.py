@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from fastapi import APIRouter, HTTPException
 from services.magic_item_service import MagicItemService
 from domain.magic_item import CreateItemRequest, MagicItemRead, MagicItemUpdate
-from typing import List
+from typing import List, Dict, Any
 
 router = APIRouter()
 
@@ -25,6 +25,18 @@ async def get_all_items():
         return all_items
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error retrieving all items: {str(e)}")
+
+
+@router.get("/statistics", response_model=Dict[str, Any])
+async def get_inventory_statistics():
+    """
+    Get inventory statistics.
+    """
+    try:
+        statistics = MagicItemService.get_inventory_statistics()
+        return statistics
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @router.get("/{item_id}", response_model=MagicItemRead)
