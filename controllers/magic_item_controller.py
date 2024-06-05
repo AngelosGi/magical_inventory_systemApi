@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from fastapi import APIRouter, HTTPException
 from services.magic_item_service import MagicItemService
 from domain.magic_item import CreateItemRequest, MagicItemRead, MagicItemUpdate
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union
 
 router = APIRouter()
 
@@ -55,17 +55,29 @@ async def get_item_by_id(item_id: int):
 
 
 @router.post("/create")
-async def create_item(item_data: CreateItemRequest):
+async def create_item(item_data: Union[CreateItemRequest, List[CreateItemRequest]]):
     """
-    Create a new magic item with random values for weight, durability, and rarity.
+    Create new magic items with random values for weight, durability, and rarity.
     """
     try:
-        # Convert Pydantic model to dictionary
-        item_data_dict = item_data.dict()
+        # If a single item is provided, convert it to a list with one item
+        if isinstance(item_data, CreateItemRequest):
+            item_data = [item_data]
 
-        # Call the service to create the item and generate random values
-        created_item = MagicItemService.generate_random_values(item_data_dict)
-        return created_item
+        created_items = []
+        for data in item_data:
+            # Convert Pydantic model to dictionary
+            item_data_dict = data.dict()
+
+            # Call the service to create the item and generate random values
+            created_item = MagicItemService.generate_random_values(item_data_dict)
+            created_items.append(created_item)
+
+        # If only one item was provided, return it instead of a list
+        if len(created_items) == 1:
+            return created_items[0]
+        else:
+            return created_items
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error creating item: {str(e)}")
 
