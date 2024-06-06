@@ -49,7 +49,6 @@ class MagicItemUpdate(BaseModel):
     value: Optional[int] = None
     stock: Optional[int] = None
 
-
 # class SearchCriteria(BaseModel):
 #     name: Optional[str]
 #     description: Optional[str]

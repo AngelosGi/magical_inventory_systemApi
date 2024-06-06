@@ -115,6 +115,7 @@ async def get_item_by_id(item_id: int):
 async def create_item(item_data: Union[CreateItemRequest, List[CreateItemRequest]]):
     """
     Create new magic items with random values for weight, durability, and rarity.
+    Can add single item or a list of items
     """
     try:
         # If a single item is provided, convert it to a list with one item

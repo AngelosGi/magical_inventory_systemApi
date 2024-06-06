@@ -1,5 +1,4 @@
 from typing import List, Dict, Any, Optional
-from fastapi import HTTPException
 from repositories.magic_item_repository import MagicItemRepository
 import random
 
