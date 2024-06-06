@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from fastapi import APIRouter, HTTPException
 from services.magic_item_service import MagicItemService
 from domain.magic_item import CreateItemRequest, MagicItemRead, MagicItemUpdate
-from typing import List, Dict, Any, Union
+from typing import List, Dict, Any, Union, Optional
 
 router = APIRouter()
 
@@ -37,6 +37,63 @@ async def get_inventory_statistics():
         return statistics
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/search", response_model=List[MagicItemRead])
+async def search_items(
+        name: Optional[str] = None,
+        category: Optional[str] = None,
+        type: Optional[str] = None,
+        min_level: Optional[int] = None,
+        max_level: Optional[int] = None,
+        min_value: Optional[int] = None,
+        max_value: Optional[int] = None,
+        min_stock: Optional[int] = None,
+        max_stock: Optional[int] = None
+):
+    """
+    Search for magic items based on specified criteria.
+    """
+    try:
+        search_criteria = {}
+
+        if name:
+            search_criteria['name'] = name
+        if category:
+            search_criteria['category'] = category
+        if type:
+            search_criteria['type'] = type
+        if min_level is not None:
+            search_criteria['level__gte'] = min_level
+        if max_level is not None:
+            search_criteria['level__lte'] = max_level
+        if min_value is not None:
+            search_criteria['value__gte'] = min_value
+        if max_value is not None:
+            search_criteria['value__lte'] = max_value
+        if min_stock is not None:
+            search_criteria['stock__gte'] = min_stock
+        if max_stock is not None:
+            search_criteria['stock__lte'] = max_stock
+        # add later min/max weight, durability, rarity search criteria
+
+        matched_items = MagicItemService.search_items(search_criteria)
+        return matched_items
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error searching items: {str(e)}")
+
+
+# if i want to add search criteria from magic_item.py (it changes to POST request)
+# @router.post("/search", response_model=List[MagicItemRead])
+# async def search_items(search_criteria: SearchCriteria):
+#     """
+#     Search for magic items based on specified criteria.
+#     """
+#     try:
+#         matched_items = MagicItemService.search_items(search_criteria.dict())
+#         return matched_items
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=f"Error searching items: {str(e)}")
 
 
 @router.get("/{item_id}", response_model=MagicItemRead)
