@@ -80,6 +80,40 @@ class MagicItemRepository:
             raise e
 
     @staticmethod
+    def search_items(search_criteria: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """
+        Search for magic items based on specified criteria.
+        """
+        try:
+            query = "SELECT * FROM magic_items WHERE "
+            params = []
+            conditions = []
+
+            for key, value in search_criteria.items():
+                if key.endswith("__gte"):
+                    conditions.append(f"{key[:-5]} >= %s")
+                elif key.endswith("__lte"):
+                    conditions.append(f"{key[:-5]} <= %s")
+                else:
+                    conditions.append(f"{key} = %s")
+                params.append(value)
+
+            query += " AND ".join(conditions)
+
+            with get_connection() as conn:
+                with conn.cursor() as cursor:
+                    cursor.execute(query, params)
+                    items = cursor.fetchall()
+
+            column_names = ['id', 'name', 'description', 'level', 'type', 'category', 'rarity_value', 'weight', 'value',
+                            'durability', 'stock']
+            matched_items = [dict(zip(column_names, item)) for item in items]
+
+            return matched_items
+        except Exception as e:
+            raise e
+
+    @staticmethod
     def update_item(item_id: int, update_data: dict) -> Optional[Dict[Any, Any]]:
         """
         Update an item in the database with the given item ID and update data.
