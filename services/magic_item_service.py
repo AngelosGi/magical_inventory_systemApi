@@ -75,6 +75,16 @@ class MagicItemService:
             raise Exception("Error retrieving item by ID: " + str(e))
 
     @staticmethod
+    def search_items(search_criteria: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """
+        Search for magic items based on specified criteria.
+        """
+        try:
+            return MagicItemRepository.search_items(search_criteria)
+        except Exception as e:
+            raise Exception("Error searching items: " + str(e))
+
+    @staticmethod
     def increase_stock(item_id: int, quantity: int) -> dict:
         """
         Increase the stock of a specific item.
