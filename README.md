@@ -1,5 +1,5 @@
 # Magic Inventory System API
-This project is a FastAPI-based API for managing a magical inventory system. It provides endpoints for creating, reading, updating, and deleting magical items, as well as some work-in-progress features like search functionality, inventory management, calculating rarity based on numerical rarity values like `rare`, `legendary`, etc., buying and selling methods, and a use/test item functionality that affects durability and inventory.
+This project is a FastAPI-based API for managing a magical inventory system. It provides endpoints for creating, reading, updating, deleting magical items, as well as features like search functionality, inventory management, ~~calculating rarity based on numerical rarity values like `rare`, `legendary`, etc., buying and selling methods, and a use/test item functionality that affects durability and inventory.~~ WIP
 
 ---
 
@@ -16,11 +16,19 @@ This project is a FastAPI-based API for managing a magical inventory system. It 
 
 ## Features
 
-- **CRUD Operations:** Create, read, update, and delete magical items.
-- ~~**Rarity Category Computation:** Compute rarity categories based on item rarity values.~~ not yet working on it.
+- **CRUD Operations:** Create, read, update and delete magical items, as well as other operations such as increase/decrease stock, inventory statistics, advance search.
 - **Interactive Documentation:** Swagger UI provides an interactive API documentation interface for easy exploration and testing.
 - **Modular Structure:** The project follows a clean and modular structure for scalability and maintainability.
-
+- ~~**Rarity Category Computation:** Compute rarity categories based on item rarity values.~~ WIP, working on it.
+  ```
+  ***feauture implementations.
+     create a sell method to "sell items"  (reduce stock by INT and add the value of items sold to a "wallet")
+     create a buy option,
+     create something to convert rarity to text, Common/Rare etc.
+     create something like "use_item" or "test_item" with each use/test reduce durability in items or reduce stock in
+     consumables (potions).
+     In items, if the durability reaches <0 then reduce stock by 1.
+  ``` 
 ---
 
 ## Installation
@@ -67,10 +75,12 @@ To run the Magical Inventory System API locally, follow these steps:
 
 - Access the Swagger documentation at `http://localhost:9000/docs` to explore and interact with the API endpoints.
 - Use tools like Postman to make requests to the API endpoints.
-
+  
+![image](https://github.com/AngelosGi/magical_inventory_systemApi/assets/144551151/0a07cedf-3b4c-4088-bd7c-63531e4cd1f3)
 ---
 
-When creating a new magic item, the system automatically generates random values for certain attributes such as weight, durability, and rarity. This ensures variety and uniqueness in the items created.
+When a new magical item is created, the system automatically generates random values for certain attributes, such as weight, durability and rarity, this ensures variety and uniqueness in the items you create without having to manually enter them.
+-In the root directory you will find a JSON with 70 items, which you can import one at a time or as a list through the `/items/create` Endpoint.
 
 
 ```create
