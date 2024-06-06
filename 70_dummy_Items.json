@@ -1,0 +1,641 @@
+[
+  {
+    "name": "Aetherial Cloak",
+    "description": "This cloak grants its wearer invisibility for up to one hour per day.",
+    "level": 5,
+    "type": "Cloak",
+    "category": "Armor",
+    "value": 500,
+    "stock": 1
+  },
+  {
+    "name": "Vorpal Blade",
+    "description": "This blade has a chance to decapitate foes upon a successful critical strike.",
+    "level": 10,
+    "type": "Sword",
+    "category": "Weapon",
+    "value": 1000,
+    "stock": 1
+  },
+  {
+    "name": "Phoenix Feather",
+    "description": "This feather, when burned, creates a burst of flames, incinerating nearby enemies.",
+    "level": 3,
+    "type": "Consumable",
+    "category": "Potion",
+    "value": 50,
+    "stock": 3
+  },
+  {
+    "name": "Golem's Heart",
+    "description": "When implanted into armor, it grants the wearer enhanced durability and strength.",
+    "level": 8,
+    "type": "Gem",
+    "category": "Enhancement",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Siren's Song",
+    "description": "This enchanted flute has the ability to charm and control sea creatures.",
+    "level": 6,
+    "type": "Instrument",
+    "category": "Artifact",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Mystic Elixir",
+    "description": "Drinking this potion grants the consumer temporary heightened senses and reflexes.",
+    "level": 4,
+    "type": "Elixir",
+    "category": "Potion",
+    "value": 100,
+    "stock": 5
+  },
+  {
+    "name": "Whispering Bow",
+    "description": "This bow fires arrows that move silently through the air, making them hard to detect.",
+    "level": 7,
+    "type": "Bow",
+    "category": "Weapon",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Crystal Ball",
+    "description": "Allows the user to scry into distant lands and see events happening in real-time.",
+    "level": 9,
+    "type": "Orb",
+    "category": "Artifact",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Ethereal Boots",
+    "description": "Grants the wearer the ability to walk on air and clouds as if they were solid ground.",
+    "level": 6,
+    "type": "Boots",
+    "category": "Armor",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Potion of Giant Strength",
+    "description": "Drinking this potion grants the consumer immense physical strength for a short duration.",
+    "level": 5,
+    "type": "Potion",
+    "category": "Consumable",
+    "value": 200,
+    "stock": 3
+  },
+  {
+    "name": "Spectral Dagger",
+    "description": "This dagger can phase through solid objects, allowing the wielder to bypass barriers.",
+    "level": 7,
+    "type": "Dagger",
+    "category": "Weapon",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Helm of the Phoenix",
+    "description": "This helm protects the wearer from fire damage and can summon a protective barrier of flames.",
+    "level": 8,
+    "type": "Helmet",
+    "category": "Armor",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Elixir of Invisibility",
+    "description": "Drinking this elixir renders the consumer invisible for a short duration.",
+    "level": 6,
+    "type": "Elixir",
+    "category": "Potion",
+    "value": 150,
+    "stock": 3
+  },
+  {
+    "name": "Goblin's Grasp",
+    "description": "This enchanted gauntlet allows the wearer to steal the strength and vitality of their enemies.",
+    "level": 9,
+    "type": "Gauntlet",
+    "category": "Armor",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Amulet of the Moon",
+    "description": "This amulet grants the wearer increased magical power during the night.",
+    "level": 5,
+    "type": "Amulet",
+    "category": "Accessory",
+    "value": 500,
+    "stock": 1
+  },
+  {
+    "name": "Rod of Lightning",
+    "description": "This rod can summon bolts of lightning to strike down enemies from the sky.",
+    "level": 8,
+    "type": "Rod",
+    "category": "Weapon",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Potion of Healing",
+    "description": "Drinking this potion restores a moderate amount of health to the consumer.",
+    "level": 3,
+    "type": "Potion",
+    "category": "Consumable",
+    "value": 50,
+    "stock": 5
+  },
+  {
+    "name": "Crown of Wisdom",
+    "description": "This crown enhances the wearer's intelligence and grants them great insight.",
+    "level": 7,
+    "type": "Crown",
+    "category": "Armor",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Soulstone",
+    "description": "This stone can store the soul of a fallen enemy, allowing the wielder to summon them as a temporary ally.",
+    "level": 10,
+    "type": "Gem",
+    "category": "Artifact",
+    "value": 1000,
+    "stock": 1
+  },
+  {
+    "name": "Gloves of Dexterity",
+    "description": "These gloves grant the wearer increased agility and precision in their movements.",
+    "level": 5,
+    "type": "Gloves",
+    "category": "Armor",
+    "value": 500,
+    "stock": 1
+  },
+  {
+    "name": "Elixir of Levitation",
+    "description": "Drinking this elixir allows the consumer to float several feet above the ground for a limited time.",
+    "level": 4,
+    "type": "Elixir",
+    "category": "Potion",
+    "value": 100,
+    "stock": 3
+  },
+  {
+    "name": "Shadow Cloak",
+    "description": "This cloak shrouds the wearer in darkness, making them nearly invisible in dim light.",
+    "level": 6,
+    "type": "Cloak",
+    "category": "Armor",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Staff of the Elements",
+    "description": "This staff can harness the power of fire, ice, and lightning, allowing the wielder to cast powerful spells.",
+    "level": 9,
+    "type": "Staff",
+    "category": "Weapon",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Potion of Haste",
+    "description": "Drinking this potion greatly increases the consumer's speed and reaction time for a short duration.",
+    "level": 4,
+    "type": "Potion",
+    "category": "Consumable",
+    "value": 75,
+    "stock": 3
+  },
+  {
+    "name": "Ring of Teleportation",
+    "description": "This ring allows the wearer to teleport to a location of their choosing once per day.",
+    "level": 8,
+    "type": "Ring",
+    "category": "Accessory",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Bottled Lightning",
+    "description": "This bottle contains a captured bolt of lightning that can be released to strike enemies.",
+    "level": 7,
+    "type": "Consumable",
+    "category": "Potion",
+    "value": 300,
+    "stock": 5
+  },
+  {
+    "name": "Mirror Shield",
+    "description": "This shield reflects magical attacks back at the caster.",
+    "level": 6,
+    "type": "Shield",
+    "category": "Armor",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Potion of Invisibility",
+    "description": "Drinking this potion renders the consumer invisible for a short duration.",
+    "level": 5,
+    "type": "Potion",
+    "category": "Consumable",
+    "value": 150,
+    "stock": 3
+  },
+  {
+    "name": "Helm of Understanding",
+    "description": "This helm grants the wearer the ability to comprehend and speak any language.",
+    "level": 7,
+    "type": "Helmet",
+    "category": "Armor",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Scroll of Summoning",
+    "description": "This scroll summons a powerful ally to aid the caster in battle.",
+    "level": 8,
+    "type": "Scroll",
+    "category": "Consumable",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Eternal Flame",
+    "description": "This enchanted torch never goes out and emits a bright light that can dispel darkness.",
+    "level": 6,
+    "type": "Torch",
+    "category": "Utility",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Ring of Regeneration",
+    "description": "This ring accelerates the wearer's natural healing process, allowing wounds to close rapidly.",
+    "level": 7,
+    "type": "Ring",
+    "category": "Accessory",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Celestial Bow",
+    "description": "Crafted from the horns of celestial beasts, this bow shoots arrows of holy light that smite evil.",
+    "level": 8,
+    "type": "Bow",
+    "category": "Weapon",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Mystic Brew",
+    "description": "This magical ale grants the drinker temporary resistance to magical attacks.",
+    "level": 5,
+    "type": "Beverage",
+    "category": "Consumable",
+    "value": 100,
+    "stock": 5
+  },
+  {
+    "name": "Gem of Telekinesis",
+    "description": "This gem allows the bearer to move objects with their mind, within a limited range.",
+    "level": 7,
+    "type": "Gem",
+    "category": "Artifact",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Cloak of Shadows",
+    "description": "This cloak envelops the wearer in shadows, granting them enhanced stealth abilities.",
+    "level": 6,
+    "type": "Cloak",
+    "category": "Armor",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Potion of Fortune",
+    "description": "Drinking this potion brings luck to the consumer, increasing the chance of finding valuable treasures.",
+    "level": 4,
+    "type": "Potion",
+    "category": "Consumable",
+    "value": 75,
+    "stock": 3
+  },
+  {
+    "name": "Serpentine Staff",
+    "description": "This staff is carved from the scales of ancient serpents and can summon serpentine creatures to aid the wielder.",
+    "level": 9,
+    "type": "Staff",
+    "category": "Weapon",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Medallion of Protection",
+    "description": "This medallion grants the wearer immunity to a specific type of elemental damage.",
+    "level": 7,
+    "type": "Medallion",
+    "category": "Accessory",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Essence of Time",
+    "description": "This vial contains the essence of time itself, allowing the consumer to briefly manipulate time in their favor.",
+    "level": 10,
+    "type": "Elixir",
+    "category": "Potion",
+    "value": 1000,
+    "stock": 1
+  },
+  {
+    "name": "Gloves of Fire",
+    "description": "These gloves are imbued with the power of fire, allowing the wearer to conjure flames at will.",
+    "level": 6,
+    "type": "Gloves",
+    "category": "Armor",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Goblet of Endless Wine",
+    "description": "This enchanted goblet always remains full of the finest wine, no matter how much is consumed.",
+    "level": 5,
+    "type": "Goblet",
+    "category": "Consumable",
+    "value": 200,
+    "stock": 3
+  },
+  {
+    "name": "Mask of Deception",
+    "description": "This mask allows the wearer to change their appearance at will, fooling even the keenest observers.",
+    "level": 8,
+    "type": "Mask",
+    "category": "Armor",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Horn of Plenty",
+    "description": "This horn, when blown, conjures forth a feast fit for kings, providing food and drink for all who partake.",
+    "level": 7,
+    "type": "Horn",
+    "category": "Consumable",
+    "value": 300,
+    "stock": 5
+  },
+  {
+    "name": "Glaive of the Storms",
+    "description": "This glaive harnesses the power of thunderstorms, allowing the wielder to call forth lightning strikes.",
+    "level": 9,
+    "type": "Glaive",
+    "category": "Weapon",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Charm of Animal Friendship",
+    "description": "This charm grants the wearer the ability to communicate with and befriend animals.",
+    "level": 6,
+    "type": "Charm",
+    "category": "Accessory",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Spectral Shield",
+    "description": "This shield can phase in and out of existence, making it impossible for enemies to land a solid blow.",
+    "level": 7,
+    "type": "Shield",
+    "category": "Armor",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Bottled Geyser",
+    "description": "This bottle contains the essence of a geyser, releasing a powerful blast of water when uncorked.",
+    "level": 8,
+    "type": "Consumable",
+    "category": "Potion",
+    "value": 800,
+    "stock": 5
+  },
+  {
+    "name": "Quiver of Plenty",
+    "description": "This quiver always produces arrows when needed, never running out of ammunition.",
+    "level": 6,
+    "type": "Quiver",
+    "category": "Accessory",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Crown of the Celestial Emperor",
+    "description": "This magnificent crown bestows upon the wearer the authority of the heavens themselves, granting control over celestial bodies and divine powers.",
+    "level": 15,
+    "type": "Crown",
+    "category": "Artifact",
+    "value": 1500,
+    "stock": 1
+  },
+  {
+    "name": "Scepter of the Arcane Archmage",
+    "description": "This scepter crackles with raw magical energy, empowering the wielder with unrivaled spellcasting abilities and mastery over the arcane arts.",
+    "level": 14,
+    "type": "Scepter",
+    "category": "Artifact",
+    "value": 1400,
+    "stock": 1
+  },
+  {
+    "name": "Ethereal Armor of the Ancients",
+    "description": "This ethereal armor, forged by ancient beings, grants the wearer unparalleled protection, phasing in and out of existence to evade attacks.",
+    "level": 13,
+    "type": "Armor",
+    "category": "Artifact",
+    "value": 1300,
+    "stock": 1
+  },
+  {
+    "name": "Eternal Staff of the Cosmos",
+    "description": "This staff channels the infinite power of the cosmos, allowing the wielder to reshape reality itself and bend space and time to their will.",
+    "level": 16,
+    "type": "Staff",
+    "category": "Artifact",
+    "value": 1600,
+    "stock": 1
+  },
+  {
+    "name": "Amulet of the Eternal Phoenix",
+    "description": "This amulet contains the essence of the eternal phoenix, granting the wearer immortality and the ability to rise from the ashes.",
+    "level": 12,
+    "type": "Amulet",
+    "category": "Artifact",
+    "value": 1200,
+    "stock": 1
+  },
+  {
+    "name": "Blade of the Void",
+    "description": "Forged from the darkness of the void, this blade cuts through reality itself, rending space and sundering enemies with each strike.",
+    "level": 18,
+    "type": "Sword",
+    "category": "Weapon",
+    "value": 1800,
+    "stock": 1
+  },
+  {
+    "name": "Helm of the Divine Sentinel",
+    "description": "This helm bestows upon the wearer the sight of the divine, allowing them to perceive threats before they materialize and defend against even the most potent of attacks.",
+    "level": 17,
+    "type": "Helmet",
+    "category": "Artifact",
+    "value": 1700,
+    "stock": 1
+  },
+  {
+    "name": "Infernal Gauntlets of Demonic Might",
+    "description": "These infernal gauntlets harness the power of the abyss, granting the wearer unmatched strength and the ability to command legions of demons.",
+    "level": 15,
+    "type": "Gauntlets",
+    "category": "Artifact",
+    "value": 1500,
+    "stock": 1
+  },
+  {
+    "name": "Ethereal Cloak of the Astral Wanderer",
+    "description": "This cloak allows the wearer to traverse the astral plane at will, granting access to hidden realms and secret knowledge.",
+    "level": 14,
+    "type": "Cloak",
+    "category": "Artifact",
+    "value": 1400,
+    "stock": 1
+  },
+  {
+    "name": "Orb of Infinite Realms",
+    "description": "This orb contains miniature universes within its depths, each holding untold treasures and ancient secrets waiting to be discovered.",
+    "level": 20,
+    "type": "Orb",
+    "category": "Artifact",
+    "value": 2000,
+    "stock": 1
+  },
+  {
+    "name": "Rod of Illusions",
+    "description": "This rod can create realistic illusions to deceive and distract enemies.",
+    "level": 7,
+    "type": "Rod",
+    "category": "Weapon",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Tome of Knowledge",
+    "description": "This tome contains vast amounts of knowledge on various subjects, granting the reader increased intelligence.",
+    "level": 8,
+    "type": "Book",
+    "category": "Artifact",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Potion of Flight",
+    "description": "Drinking this potion grants the consumer the ability to fly for a limited duration.",
+    "level": 5,
+    "type": "Potion",
+    "category": "Consumable",
+    "value": 150,
+    "stock": 3
+  },
+  {
+    "name": "Gem of Truth",
+    "description": "This gem reveals the truth behind illusions and deceptions, allowing the bearer to see through lies.",
+    "level": 7,
+    "type": "Gem",
+    "category": "Artifact",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Amulet of Resilience",
+    "description": "This amulet grants the wearer increased resistance to physical damage.",
+    "level": 6,
+    "type": "Amulet",
+    "category": "Accessory",
+    "value": 600,
+    "stock": 1
+  },
+  {
+    "name": "Cloak of the Elements",
+    "description": "This cloak grants the wearer immunity to elemental damage, protecting them from fire, ice, and lightning.",
+    "level": 9,
+    "type": "Cloak",
+    "category": "Armor",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Elixir of Strength",
+    "description": "Drinking this elixir temporarily enhances the consumer's physical strength, allowing them to perform feats of great strength.",
+    "level": 6,
+    "type": "Elixir",
+    "category": "Potion",
+    "value": 200,
+    "stock": 3
+  },
+  {
+    "name": "Orb of Teleportation",
+    "description": "This orb allows the bearer to teleport themselves and others to any location they desire.",
+    "level": 8,
+    "type": "Orb",
+    "category": "Artifact",
+    "value": 800,
+    "stock": 1
+  },
+  {
+    "name": "Harp of Healing",
+    "description": "This harp emits soothing melodies that heal the wounds of those who listen to its music.",
+    "level": 7,
+    "type": "Harp",
+    "category": "Instrument",
+    "value": 700,
+    "stock": 1
+  },
+  {
+    "name": "Vial of Dragon's Blood",
+    "description": "This vial contains the blood of a dragon, granting the consumer increased strength and resilience.",
+    "level": 10,
+    "type": "Vial",
+    "category": "Consumable",
+    "value": 1000,
+    "stock": 1
+  },
+  {
+    "name": "Sword of Justice",
+    "description": "This sword is imbued with the power of justice, dealing extra damage to evildoers and wrongdoers.",
+    "level": 9,
+    "type": "Sword",
+    "category": "Weapon",
+    "value": 900,
+    "stock": 1
+  },
+  {
+    "name": "Gauntlets of Strength",
+    "description": "These gauntlets enhance the wearer's physical strength, allowing them to wield heavier weapons with ease.",
+    "level": 6,
+    "type": "Gauntlets",
+    "category": "Armor",
+    "value": 600,
+    "stock": 1
+  }
+]
