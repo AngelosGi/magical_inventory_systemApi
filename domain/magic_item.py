@@ -48,3 +48,16 @@ class MagicItemUpdate(BaseModel):
     durability: Optional[float] = None
     value: Optional[int] = None
     stock: Optional[int] = None
+
+
+# class SearchCriteria(BaseModel):
+#     name: Optional[str]
+#     description: Optional[str]
+#     level: Optional[int]
+#     type: Optional[str]
+#     category: Optional[str]
+#     rarity_value: Optional[float]
+#     weight: Optional[float]
+#     value: Optional[int]
+#     durability: Optional[float]
+#     stock: Optional[int]
