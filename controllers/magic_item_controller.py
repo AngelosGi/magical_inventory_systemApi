@@ -12,7 +12,8 @@ async def root():
     """
     Welcome message.
     """
-    return {"message": "Welcome to my Inventory, all things magical!"}
+    return {"message": "Welcome to my Inventory, all things magical!"}, {"GitHub plug": "https://github.com/AngelosGi"
+                                                                                        "/magical_inventory_systemApi"}
 
 
 @router.get("/all", response_model=List[MagicItemRead])
