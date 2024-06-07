@@ -38,7 +38,8 @@ To run the Magical Inventory System API locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/magical_inventory_systemApi.git
+   Https: git clone https://github.com/AngelosGi/magical_inventory_systemApi.git
+   SSH: git clone git@github.com:AngelosGi/magical_inventory_systemApi.git
    ```
 
 2. Install dependencies:
